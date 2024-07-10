@@ -1,0 +1,1123 @@
+
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<br>
+<style>
+	.delivery{
+		background-color: #ABFB9E;
+		padding:30px;
+		padding-top:10px;
+		padding-bottom: 10px; 
+		width: 100%;
+	}
+	.delivery ul li{
+		list-style: disc;
+	}
+	.left-form{
+		position: relative;
+		left:100px;
+	}
+	
+/*======================================
+   Start Checkout Form CSS
+========================================*/
+@media screen and (min-width: 1670px) {
+.form-data{
+	width:900px;
+	margin-left:20%;
+	border-top: 1px solid #C4C4C4;
+}
+.shop.checkout {
+	padding: 0;
+	background: #fff;
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+.shop.checkout .checkout-form {
+	margin-top: 30px;
+}
+.shop.checkout .checkout-form h2 {
+	font-size: 25px;
+	color: #333;
+	font-weight: 700;
+	line-height: 27px;
+}
+.shop.checkout .checkout-form p {
+	font-size: 16px;
+	color: #333;
+	font-weight: 400;
+	margin-top: 12px;
+	margin-bottom: 30px;
+}
+.shop.checkout .form{}
+.shop.checkout .form .form-group {
+	margin-bottom: 50px;
+
+}
+.shop.checkout .form .form-group label{
+	color:#333;
+	position:relative;
+}
+.shop.checkout .form .form-group label span {
+	color: #ff2c18;
+	display: inline-block;
+	position: absolute;
+	right: -12px;
+	top: 4px;
+	font-size: 16px;
+}
+.shop.checkout .form .form-group input {
+	width: 280px;
+	height: 45px;
+	line-height: 50px;
+	padding: 0 20px;
+	border-radius: 3px;
+	border-radius: 0px;
+	color:#939393;
+	border: 1px solid #939393;
+	box-sizing: border-box;
+	outline: 0;
+}
+.shop.checkout .form .form-group input:hover{
+	
+}
+.shop.checkout .nice-select {
+	width: 280px;
+	height: 45px;
+	line-height: 50px;
+	margin-bottom: 25px;
+	background: #F6F7FB;
+	border-radius: 0px;
+	border:none;
+	margin-right:50px;
+}
+.shop.checkout .nice-select .list {
+	width: 100%;
+	height: 300px;
+	overflow: scroll;
+}
+.shop.checkout .nice-select .list li{}
+.shop.checkout .nice-select .list li.option{
+	color:#333;
+}
+.shop.checkout .nice-select .list li.option:hover{
+	background:#F6F7FB;
+	color:#333;
+}
+.shop.checkout .form .address input {
+	margin-bottom: 15px;
+}
+.shop.checkout .form .address input:last-child{
+	margin:0;
+}
+.shop.checkout .form .create-account {
+	margin: 0;
+}
+.shop.checkout .form .create-account input {
+	width: auto;
+	display: inline-block;
+	height: auto;
+	border-radius: 100%;
+	margin-right: 3px;
+}
+.shop.checkout .form .create-account label {
+	display: inline-block;
+	margin: 0;
+}
+.shop.checkout .order-details {
+	margin-top: 30px;
+	background: #fff;
+	padding: 15px 0 30px 0;
+	
+}
+.shop.checkout .single-widget {
+	margin-bottom: 30px;
+}
+.shop.checkout .single-widget:last-child{
+	margin:0;
+}
+.shop.checkout .single-widget h2 {
+	position:relative;
+	font-size: 15px;
+	font-weight: 600;
+	padding: 10px 30px;
+	line-height: 24px;
+	text-transform: uppercase;
+	color: #333;
+	padding-bottom: 5px;
+	border-bottom: 0;
+}
+.shop.checkout .single-widget h2:before{
+	position:absolute;
+	content:"";
+	left:30px;
+	bottom:0;
+	height:2px;
+	width:50px;
+	background:#F7941D;
+}
+.shop.checkout .single-widget .content ul{
+	margin-top:30px;
+}
+.shop.checkout .single-widget .content ul li {
+	display: block;
+	padding: 0px 30px;
+	font-size: 15px;
+	font-weight: 400;
+	color: #333;
+	margin-bottom: 12px;
+}
+.shop.checkout .single-widget .content ul li span{
+	display:inline-block;
+	float:right;
+}
+.shop.checkout .single-widget .content ul li.last {
+	padding-top: 12px;
+	border-top: 1px solid #ebebeb;
+	display: block;
+	font-size: 15px;
+	font-weight: 400;
+	color: #333;
+}
+.shop.checkout .single-widget .checkbox {
+	text-align: left;
+	margin: 0;
+	padding: 0px 30px;
+	margin-top:30px;
+}
+.shop.checkout .single-widget .checkbox label {
+	color: #555555;
+	position: relative;
+	font-size: 14px;
+	padding-left: 20px;
+	margin-top: -5px;
+	font-weight: 400;
+	display: block;
+	margin-bottom: 15px;
+}
+.shop.checkout .single-widget .checkbox label:last-child{
+	margin-bottom:0;
+}
+.shop.checkout .single-widget .checkbox label:hover{
+	cursor:pointer;
+}
+.shop.checkout .single-widget .checkbox label input{
+	display:none;
+}
+.shop.checkout .single-widget .checkbox label::before {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 7px;
+	width: 12px;
+	height: 12px;
+	line-height: 16px;
+	border: 1px solid #666;
+	border-radius: 100%;
+}
+.shop.checkout .single-widget .checkbox label::after {
+	position: absolute;
+	content: "";
+	left: 0;
+	top: 7px;
+	width: 12px;
+	height: 12px;
+	line-height: 16px;
+	border-radius: 100%;
+	display:block;
+	background:#666;
+	transform:scale(0);
+	-webkit-transition:all 0.4s ease;
+	-moz-transition:all 0.4s ease;
+	transition:all 0.4s ease;
+}
+.shop.checkout .single-widget .checkbox label.checked::after{
+	opacity:1;
+	visibility:visible;
+	transform:scale(1);
+}
+.shop.checkout .single-widget.payement {
+	padding: 0px 38px;
+	text-align: center;
+	margin-top: 30px;
+}
+.shop.checkout .single-widget.get-button {
+	text-align: center;
+	padding:0px 35px;
+}
+.shop.checkout .single-widget.get-button .btn {
+	height: 46px;
+	width: 100%;
+	line-height: 19px;
+	text-align: center;
+	border-radius: 0;
+	text-transform: uppercase;
+	color: #fff;
+}
+/*======================================
+   End Checkout Form CSS
+========================================*/
+}
+@media screen and (min-width: 1301px) and (max-width: 1670px) {
+	.form-data{
+	width:800px;
+	margin-left:10%;
+	border-top: 1px solid #C4C4C4;
+}
+	.payment{
+		width:200px;
+	}
+	.shop.checkout .form .form-group input {
+	width: 280px;
+	height: 45px;
+	line-height: 50px;
+	padding: 0 20px;
+	border-radius: 3px;
+	border-radius: 0px;
+	color:#939393;
+	border: 1px solid #939393;
+	box-sizing: border-box;
+	outline: 0;
+
+}
+}
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+	.form-data{
+	width:700px;
+	margin-left:10%;
+	border-top: 1px solid #C4C4C4;
+}
+	.payment{
+		width:200px;
+	}
+	.shop.checkout .form .form-group input {
+	width: 200px;
+	height: 45px;
+	line-height: 50px;
+	padding: 0 20px;
+	border-radius: 3px;
+	border-radius: 0px;
+	color:#939393;
+	border: 1px solid #939393;
+	box-sizing: border-box;
+	outline: 0;
+
+}
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input:required {
+    border-color: red;
+}
+.date{
+	display: inline-block;
+}
+.checkbox{
+	border: 3px solid #939393;
+box-sizing: border-box;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 275;
+line-height: 22px;
+/* identical to box height */
+color: #373737;
+padding-right:25px;
+padding-left:25px;
+padding-top:10px;
+padding-bottom: 10px;
+width:150px;
+text-align: center;
+}
+
+.form-group input[type=checkbox]:checked + label {
+  border-color:#810101;
+} 
+.form-group input[type=checkbox]{
+  opacity: 0;
+}
+.payment{
+	display: inline-block;
+}
+
+</style>
+<h2 style="margin-left: 10%;background-color: white;color:#646464;font-family: Montserrat;
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 55px;">Оформление заказа</h2>
+
+		<!-- Breadcrumbs -->
+
+		<!-- End Breadcrumbs -->
+
+				<section class="shop checkout section">
+				<!--	<div class="col-lg-4 col-12">
+						<div class="order-details">
+						
+							<div class="single-widget">
+								<h2>CART  TOTALS</h2>
+								<div class="content">
+									<ul>
+								<li>Sub Total<span>${{order.get_cart_total|floatformat:2}}</span></li>
+										<li>(+) Shipping<span>$10.00</span></li>
+										<li class="last">Total<span>${{order.get_cart_total|floatformat:2}}</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>-->
+			<div class="form-data" style="border:1px solid #C4C4C4;padding:50px;">
+				<div class="row"> 
+					<div class="col-lg-8 col-12">
+						
+							<h2 class="topic">Контакты</h2>
+			
+							<form class="form" method="POST" action="#" id="form">
+								<div class="row">
+
+									<div class="col-lg-6 col-md-6 col-12" id="user-info">
+										<div class="form-group">
+											<label>Имя<span>*</span></label>
+											<div>
+											<input type="text" name="name" placeholder="Ваше имя" required></div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12" id="user-info">
+										<div class="form-group left-form">
+											<label>Email<span>*</span></label><div>
+											<input type="email" name="email" placeholder="Email" required></div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12" id="user-info shipping-info">
+										<div class="form-group">
+											<label>Номер телефона<span>*</span></label><div>
+											<input type="number" name="number" placeholder="+996" required></div>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12" id="user-info shipping-info">
+										<div class="form-group left-form">
+											<label>Доп. номер телефона<span>*</span></label><div>
+											<input type="number" name="numberAdd" placeholder="+996" required></div>
+										</div>
+									</div>
+										</div>
+
+										<div class="row borders"> 
+					<div class="col-lg-8 col-12">
+						<div >
+							<h2 class="topic">Адрес доставки</h2>
+			
+			
+
+									<div class="col-lg-6 col-md-6 col-12" id="user-info">
+										<div class="form-group">
+											<label>Введите адрес<span>*</span></label>
+											<div>
+											<input type="text" name="address" placeholder="Улица, дом, квартира" required></div>
+								
+										</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row borders"> 
+					<div class="col-lg-8 col-12">
+						<div >
+							<h2 class="topic">Дата и время доставки</h2>
+			
+							<form class="form" method="POST" action="#" id="form">
+								<div class="row">
+
+									<div class="col-lg-6 col-md-6 col-12" id="user-info">
+										<div class="form-group">
+
+											<select name="time" id="time" required>
+  												<option value="Первая половина дня">Первая половина дня</option>
+  												<option value="Вторая половина дня">Вторая половина дня</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12" id="user-info">
+										<div class="form-group left-form">
+											<input type="date" id="date" name="date" style="margin-left:100px;">
+										</div>
+									</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="row borders"> 
+					<div class="col-lg-8 col-12">
+						<div >
+							<h2 class="topic">Выбрать способ оплаты</h2>
+							<p class="hidden" style="color:red;" id="payment-field">*обязательное поле</p>
+							<form class="form" method="POST" action="#" id="form">
+								<div class="row">
+
+									<div class="col-lg-6 col-md-6 col-12" id="user-info">
+										<div class="form-group" required>
+											<div>
+
+												<input type="checkbox" id="pay-website" name="payment" class="payment" value="На сайте" onclick="onlyOne(this)">
+												<label class="checkbox payment" for="pay-website" onclick="OnlinePay()">На сайте</label>
+										</div>
+									</div>
+										</div>
+										<div class="col-lg-6 col-md-6 col-12" id="user-info">
+										<div class="form-group">
+											<div>
+
+												<input type="checkbox" id="pay-courier" name="payment" class="payment" value="Курьеру" onclick="onlyOne(this)">
+												<label class="checkbox payment" for="pay-courier" onclick="CourierPay()">Курьеру</label>
+										</div>
+									</div>
+										</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							
+				 	<div class="row borders"> 
+					<div class="col-lg-8 col-12">
+						<div>
+							<h2 class="topic">Комментарии к заказу</h2>
+			
+							
+
+									<div class="col-lg-6 col-md-6 col-12" id="user-info">
+										<div class="form-group">
+											<div>
+
+												<textarea name="comment" rows="10" cols="100" style="border: 1px solid #C4C4C4;
+box-sizing: border-box;width:auto;outline: none;" id="comment" placeholder="Укажите дополнительную информацтю по заказу, которую вы считаете нужной" required></textarea>
+												<br>
+												<br>
+										</div>
+									</div>
+										</div>
+										
+										</div>
+									
+									
+								</div>
+							</div>
+							<div class="delivery"> 
+								<ul>
+  <li>Доставка осуществляется в течении одного-двух рабочих дней, после полной оплаты заказа, в зависимости от габаритов заказа, веса и зоны доставки. </li>  
+  <li>Доставка по городу Бишкек бесплатная. Однако, сумма доставки может быть начислена при больших объемах, и зоны доставки. </li>
+  <li>Служба доставки ждёт заказчика не более 30 минут. По истечении времени, курьер уезжает и повторная доставка товара оплачивается отдельно. </li>
+  <li>Служба доставки работает с понедельника по субботу. Воскресенье выходной день. </li>
+  <li>Время работы службы доставки: С понедельника по субботу с 14:00 до 18:00 </li>
+    
+  </li>
+  <li>В случае возврата товара по следующим причинам: товар не понравился клиенту, товара на момент оплаты не было в наличии на складе, сумма оплаты за заказ возвращается без комиссии. 
+</li>
+  <li>В случае возврата товара по следующим причинам: товар не понравился клиенту, товара на момент оплаты не было в наличии на складе, сумма оплаты за заказ возвращается без комиссии. 
+Более подробно, вас проконсультирует менеджер ведущий сделку +996 500 709 820 (WhatsApp) </li>
+</ul>
+								
+							</div>
+							<br>
+							<br>
+								<div class="policy">
+							<input type="checkbox" id="policy" name="policy" id="policy" value="agree">
+												<label for="policy"> 
+Я согласен с <a href="{% url 'privacy' %}" style="text-decoration: underline;">условиями использования</a></label><br>
+<p class="hidden" style="color:red;" id="required-field">*обязательное поле</p>
+</div><br>
+<br><br>
+								
+				
+					
+		
+					<div class="single-widget get-button" style="margin-left:0;margin-top:30px;">
+								<div class="content">
+									<div class="button" >
+										<a href="#" class="btn"  id="make-payment">Подтвердить заказ</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div></form></div></div></div>
+
+						<div class="col-lg-4 col-12" style="position: absolute;top:0;left:70%;">
+						<div class="order-details" style="border: 3px solid #810101;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);width:300px;">
+						
+							<div class="single-widget">
+								<h2>Итого</h2>
+								<div class="content">
+									<ul>
+								<li>Город:<span>Бишкек</span></li>
+										<li>Вес<span></span></li>
+										<li class="last">Общая сумма:<span>{{order.get_cart_total}} сом</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<script>
+					function onlyOne(checkbox) {
+    var checkboxes = document.getElementsByName('payment')
+    checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false
+    })
+}
+
+				</script>
+				<script>
+					var payment=""
+					function OnlinePay(){
+						payment="На сайте";
+					}
+					function CourierPay(){
+						payment="Курьеру";
+					}
+					var id= '{{order.order_id}}'
+					console.log(id)
+				var form = document.getElementById('form')
+		form.addEventListener('submit', function(e){
+	    	e.preventDefault()
+	    	console.log('Form Submitted...')
+	    	
+	    })
+
+	   document.getElementById('make-payment').addEventListener('click', function(e){
+	   		const agree = document.querySelector('#policy');
+			var policy = agree.checked;
+			var element = document.getElementById("required-field");
+  			
+			if(policy==true){
+				submitFormData()
+			}else{
+				element.classList.remove("hidden");
+			}
+	    	
+	    })
+	    
+
+	    function submitFormData(){
+	    	console.log('Payment button clicked')
+
+	    	var userFormData = {
+				'name':null,
+				'email':null,
+				'number':null,
+				'numberAdd':null,
+				'address':null,
+				'time':null,
+				'date':null,
+				'payment':null,
+				'comment':null,
+				'id':id,
+			}
+
+	
+
+	    	
+	    	
+
+	 	    userFormData.name = form.name.value
+	    	userFormData.email = form.email.value
+	    	userFormData.number = form.number.value
+	    	userFormData.numberAdd = form.numberAdd.value
+	    	userFormData.address = form.address.value
+	    	userFormData.time = form.time.value
+	    	userFormData.date = form.date.value
+	    	userFormData.comment= form.comment.value
+	    	userFormData.payment = payment
+	    	
+	    	
+
+	    	console.log('Shipping Info:')
+	    	console.log('User Info:', userFormData)
+
+	    	var url = "/process_order/"
+	    	fetch(url, {
+	    		method:'POST',
+	    		headers:{
+	    			'Content-Type':'applicaiton/json',
+	    			'X-CSRFToken':csrftoken,
+	    		}, 
+	    		body:JSON.stringify({'form':userFormData}),
+	    		
+	    	})
+	    	
+	    	.then((data) => {
+				console.log('Success:', data);
+				alert('Transaction completed');  
+
+				cart = {}
+				document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+
+				window.location.href = "{% url 'store' %}"
+
+				})
+	    }
+	</script>
+									<!--<input id="form-button" class="btn btn-success btn-block" style="width:80%" type="submit" value="Continue">-->
+							
+						<!--	<div class="box-element" id="payment-info">
+				<small>Paypal Options</small>
+				<button id="make-payment">Make payment</button
+				 <div id="paypal-button-container"></div>
+			</div>-->
+							<!--/ End Form -->
+					<!--	</div>
+					</div>
+					<div class="col-lg-4 col-12">
+						<div class="order-details">
+							
+							<div class="single-widget">
+								<h2>CART  TOTALS</h2>
+								<div class="content">
+									<ul>
+										<li>Sub Total<span>${{order.get_cart_total|floatformat:2}}</span></li>
+										<li>(+) Shipping<span>$10.00</span></li>
+										<li class="last">Total<span>${{order.get_cart_total|floatformat:2}}</span></li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="single-widget">
+								<h2>Payments</h2>
+								<div class="content">
+									<div class="checkbox">
+										<label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox"> Check Payments</label>
+										<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Cash On Delivery</label>
+										<label class="checkbox-inline" for="3"><input name="news" id="3" type="checkbox"> PayPal</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="single-widget payement">
+								<div class="content">
+									<img src="images/payment-method.png" alt="#">
+								</div>
+							</div>
+							
+							<div class="single-widget get-button">
+								<div class="content">
+									<div class="button">
+										<a href="#" class="btn"  id="make-payment">proceed to checkout</a>
+									</div>
+								</div>
+							</div>
+							/ End Button Widget 
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+					Shopping Summery -->
+					<!--<table class="table shopping-summery">
+						<thead>
+							<tr class="main-hading">
+								<th>PRODUCT</th>
+								<th>NAME</th>
+								<th class="text-center">UNIT PRICE</th>
+								<th class="text-center">QUANTITY</th>
+								<th class="text-center">TOTAL</th> 
+								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for item in items %}
+							<tr>
+								<td class="image" data-title="No"><img src="{{item.product.imageURL}}" alt="#"></td>
+								<td class="product-des" data-title="Description">
+									<p class="product-name"><a href="#">{{item.product.name}}</a></p>
+									<p class="product-des">Maboriosam in a tonto nesciung eget  distingy magndapibus.</p>
+								</td>
+								<td class="price" data-title="Price"><span>${{item.product.price}} </span></td>
+								<td class="qty" data-title="Qty">
+								<div style="flex:1" class="cart-row">
+									<p class="quantity" style="font-size: 20px;">{{item.quantity}}</p>
+									<div class="quantity">
+									<img style="width:10px;height:10px;" data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="{% static  'images/arrow-up.png' %}">
+					
+									<img style="width:10px;height:10px;" data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="{% static  'images/arrow-down.png' %}">
+									</div>
+								</div>
+									
+									
+								</td>
+								<td class="total-amount" data-title="Total"><span>${{item.get_total|floatformat:2}}</span></td>
+								<td class="action chg-quantity update-cart"  data-title="Remove" data-product="{{item.product.id}}" data-action="delete"><a href="/update-cart"><i class="ti-trash remove-icon"></i></a></td>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>-->
+		<!-- Start Checkout -->
+
+<!--		<section class="shop checkout section">
+			<div class="container">
+				<div class="row"> 
+					<div class="col-lg-8 col-12">
+						<div class="checkout-form">
+						
+							<p>Please register in order to checkout more quickly</p>
+							
+							<form class="form" method="post" action="#" id="form">
+								
+								
+									<div id="shipping-info">
+								<div id="user-info">		
+											<div class="row">				
+									<div class="col-lg-6 col-md-6 col-12">
+										
+										<div class="form-group">
+											<label>Имя<span>*</span></label>
+											<input type="text" name="name" placeholder="" required="required">
+										</div>
+									
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Фамилия<span>*</span></label>
+											<input type="text" name="surname" placeholder="" required="required">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Email<span>*</span></label>
+											<input type="email" name="email" placeholder="" required="required">
+										</div>
+									</div>
+								</div>
+
+							
+
+								
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Номер телефона<span>*</span></label>
+											<input type="text" name="number" placeholder="" required="required">
+										</div>
+									</div>
+								</div>
+
+									<div class="col-lg-6 col-md-6 col-12">
+
+										<div class="form-group">
+											<label>Адрес<span>*</span></label>
+											<input type="text"  name="address" placeholder="" required="required">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Город<span>*</span></label>
+											<input type="text" name="city" placeholder="" >
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-12">
+										<div class="form-group">
+											<label>Область<span>*</span></label>
+											<input type="text" name="state" placeholder="" required="required">
+										</div>
+									</div>
+										</div>
+								
+									<input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+								</div>
+							</form>
+							<div class="box-element" id="payment-info">
+				<small>Paypal Options</small>
+				<button id="make-payment">Make payment</button
+				 <div id="paypal-button-container"></div>
+			</div>
+			</div>
+		
+					
+						</div>
+					</div>
+					<div class="col-lg-4 col-12">
+						<div class="order-details">
+						
+							<div class="single-widget">
+								<h2>CART  TOTALS</h2>
+								<div class="content">
+									<ul>
+								<li>Sub Total<span>${{order.get_cart_total|floatformat:2}}</span></li>
+										<li>(+) Shipping<span>$10.00</span></li>
+										<li class="last">Total<span>${{order.get_cart_total|floatformat:2}}</span></li>
+									</ul>
+								</div>
+							</div>
+						
+							<div class="single-widget">
+								<h2>Payments</h2>
+								<div class="content">
+									<div class="checkbox">
+										<label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox"> Check Payments</label>
+										<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Cash On Delivery</label>
+										<label class="checkbox-inline" for="3"><input name="news" id="3" type="checkbox"> PayPal</label>
+									</div>
+								</div>
+							</div>
+
+						
+							<div class="single-widget payement">
+								<div class="content">
+									<img src="images/payment-method.png" alt="#">
+								</div>
+							</div>
+							
+							<div class="single-widget get-button">
+								<div class="content">
+									<div class="button">
+										<input id="form-button" class="btn btn-success btn-block" type="submit" value="Continue">
+									</div>
+								</div>
+							</div>
+						</form>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>-->
+		<!--/ End Checkout -->
+		
+
+	<!--<script type="text/javascript">
+		
+		var form = document.getElementById('form')
+		form.addEventListener('submit', function(e){
+	    	e.preventDefault()
+	    	console.log('Form Submitted...')
+	    	submitFormData()
+	    	
+	    })
+
+	   /*document.getElementById('form').addEventListener('click', function(e){
+	    	submitFormData()
+	    })
+	    */
+
+	    function submitFormData(){
+	    	console.log('Payment button clicked')
+
+	    	var userFormData = {
+				'name':null,
+				'email':null,
+				
+			}
+
+			var shippingInfo = {
+				'address':null,
+				'city':null,
+				'state':null,
+				
+			}
+
+			
+	    	shippingInfo.address = form.address.value
+		    shippingInfo.city = form.city.value
+		    shippingInfo.state = form.state.value
+		    
+	    	}
+
+	    	if (user == 'AnonymousUser'){
+	    		userFormData.name = form.name.value
+	    		userFormData.email = form.email.value
+	    	}
+
+	    	console.log('Shipping Info:', shippingInfo)
+	    	console.log('User Info:', userFormData)
+
+	    	var url = "/process_order/"
+	    	fetch(url, {
+	    		method:'POST',
+	    		headers:{
+	    			'Content-Type':'applicaiton/json',
+	    			'X-CSRFToken':csrftoken,
+	    		}, 
+	    		body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+	    		
+	    	})
+	    	.then((response) => response.json())
+	    	.then((data) => {
+				console.log('Success:', data);
+				alert('Transaction completed');  
+
+				cart = {}
+				document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+
+				window.location.href = "{% url 'store' %}"
+
+				})
+
+	</script>-->
+
+	<!--<script type="text/javascript">
+			
+	    document.getElementById('form-button').addEventListener('click', function(e){
+	    	submitFormData()
+	    })
+	   
+
+	    function submitFormData(){
+	    	console.log('Payment button clicked')
+
+	    	var userFormData = {
+				'name':null,
+				'email':null,
+							}
+
+			var shippingInfo = {
+				'address':null,
+				'city':null,
+				'state':null,
+			
+			}
+
+			
+	    	shippingInfo.address = form.address.value
+		    shippingInfo.city = form.city.value
+		    shippingInfo.state = form.state.value
+		    	
+	    	
+
+	    	
+	    	userFormData.name = form.name.value
+	    	userFormData.email = form.email.value
+	    	
+
+	    	console.log('Shipping Info:', shippingInfo)
+	    	console.log('User Info:', userFormData)
+
+	    	var url = "/process_order/"
+	    	fetch(url, {
+	    		method:'POST',
+	    		headers:{
+	    			'Content-Type':'applicaiton/json',
+	    			'X-CSRFToken':csrftoken,
+	    		}, 
+	    		body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+	    		
+	    	})
+	    	.then((response) => response.json())
+	    	.then((data) => {
+				console.log('Success:', data);
+				alert('Transaction completed');  
+
+				cart = {}
+				document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+
+				window.location.href = "{% url 'store' %}"
+
+				})
+	    }
+	</script>-->
+	<!--<script type="text/javascript">
+
+		function getToken(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie !== '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = cookies[i].trim();
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+		var csrftoken = getToken('csrftoken')
+
+		
+		var total = '{{order.get_cart_total}}'
+		
+
+		
+		var form = document.getElementById('form')
+		form.addEventListener('submit', function(e){
+	    	e.preventDefault()
+	    	console.log('Form Submitted...')
+	    	
+	    })
+
+	   document.getElementById('make-payment').addEventListener('click', function(e){
+	    	submitFormData()
+	    })
+	    
+
+	    function submitFormData(){
+	    	console.log('Payment button clicked')
+
+	    	var userFormData = {
+				'name':null,
+				'surname':null,
+				'email':null,
+				'total':total,
+				
+			}
+
+			var shippingInfo = {
+				'name':null,
+				'surname':null,
+				'email':null,
+				'number':null,
+				'address':null,
+				'city':null,
+				'state':null,
+				
+			}
+
+	    	shippingInfo.address = form.address.value
+		    shippingInfo.city = form.city.value
+		    shippingInfo.state = form.state.value
+		    shippingInfo.number = form.number.value
+		    	
+	    	
+
+	 	    userFormData.name = form.name.value
+	    	userFormData.surname = form.surname.value
+	    	userFormData.email = form.email.value
+	    	
+	    	
+
+	    	console.log('Shipping Info:', shippingInfo)
+	    	console.log('User Info:', userFormData)
+
+	    	var url = "/process_order/"
+	    	fetch(url, {
+	    		method:'POST',
+	    		headers:{
+	    			'Content-Type':'applicaiton/json',
+	    			'X-CSRFToken':csrftoken,
+	    		}, 
+	    		body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
+	    		
+	    	})
+	    	
+	    	.then((data) => {
+				console.log('Success:', data);
+				alert('Transaction completed');  
+
+				cart = {}
+				document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+
+				window.location.href = "{% url 'store' %}"
+
+				})
+	    }
+	</script>
+
+
+{% endblock content %}
+
+
+ 

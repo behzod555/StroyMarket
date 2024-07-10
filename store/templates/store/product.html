@@ -1,0 +1,52 @@
+{% extends 'store/main.html' %}
+
+{% load static %}
+{% block content %}
+<br>
+<br>	
+<div class="row" style="width:85%;position: relative; left:10%;">
+{% for product in products %}
+                      <div class="store col-lg-3 col-6">
+                        <div class="single-product">
+                          <div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px" class="code">Код: 51265</p>
+  {% if product in wishedProductsList %}
+  <i class="bi bi-heart-fill addWishlist" style="color: red" data-product="{{product.id}}" data-action="add"></i>
+  {% else %}
+  <i class="bi bi-heart addWishlist"  data-product="{{product.id}}" data-action="add"></i>
+  {% endif %}
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+
+  </div>
+  <div class="product-image" style="padding:10%;">
+    <img src="{{product.imageURL}}">
+  </div>
+  <p style="color:#617375;">В наличии</p>
+  <p style="color:black;">{{product.name}}</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p class="price">Цена: {{product.price}}</p>
+
+  <div class="counter">
+    <div class="arrow-up increase" id="arrow-up" data-product="{{product.id}}" data-action="plus" ><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" class="quantity" value="1" data-product="{{product.id}}"></div>
+    <div class="arrow-down increase" id="arrow-down" data-product="{{product.id}}" data-action="minus"><i class="fa fa-arrow-down"></i></div>
+</div>
+  <div class="product-foot"><div class="product-action-2">
+                                <button data-product="{{product.id}}" style="width:100%;height: 50px;" data-action="add" class="btn btn-outline-secondary add-btn update-cart">В Корзину</button>
+                              </div></div>
+ 
+</div>
+                        </div>
+                      </div>
+                        {% endfor %}
+</div>
+		<script>
+		
+	    	document.getElementById('main').classList.remove("active");
+	    	document.getElementById('catalog').classList.add("active");
+	
+	</script>
+{% endblock content %}

@@ -1,0 +1,211 @@
+{% extends 'store/main.html' %}
+
+{% load static %}
+{% block content %}
+
+
+
+<style>
+  .container{
+    width:90%;
+    margin-left:2%;
+  }
+  table, th, td {
+    border:1px solid black;
+    font-size: 20px;
+    cursor:pointer;
+    
+  }
+  table tr th{
+    height: 75px;
+    text-align: center;
+  }
+  table tr th input{
+    outline: none;
+    border:none;
+  }
+
+  table th td i{
+    font-color:black;
+    font-size: 29px;
+  }
+  input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+  
+</style>
+<br>
+<br>
+<br>
+<div class="container">
+
+<h3>Расчет</h3>
+<br>
+<br>
+<table style="width:1264px;height: 94px;">
+  <tr>
+    <td style="width:60%;padding-left:20px;">Добавьте помещение</td>
+    <td style="width:10%" onclick="Vannaya()"><i class="bi bi-plus-lg"></i>Ванная</td>
+    <td style="width:10%" onclick="Gostinaya()"><i class="bi bi-plus-lg"></i>Гостиная</td>
+    <td style="width:10%" onclick="Sanuzel()"><i class="bi bi-plus-lg"></i>Санузел</td>
+    <td style="width:10%" onclick="Drugoe()"><i class="bi bi-plus-lg"></i>Другое</td>
+    </tr>
+</table>
+<br>
+<br>
+<table style="width:1260px;" id="tb1">
+  <tr>
+    <th>Помещение</th>
+    <th>Длина, м</th>
+    <th>Ширина,м</th>
+    <th>Высота,м</th>
+    <th>Площадь,м2</th>
+  </tr>
+  <!--<tr>
+    <th>Ванная</td>
+    <th><input type="number" placeholder="0.00" style="border:none;outline: none;"></th>
+    <th><input type="number" placeholder="0.00" style="border:none;outline: none;"></th>
+    <th><input type="number" placeholder="0.00" style="border:none;outline: none;"></th>
+    <th><input type="number" placeholder="0.00" style="border:none;outline: none;"></th>
+    <th><i class="bi bi-trash"></i></th>
+  </tr>-->
+</table>
+<br>
+<br>
+<br>
+<div style="background-color: #B8B8B8; width: 1264px;height: 200px;">
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div style="background-color: #B8B8B8; width: 100%;height: 1px;">
+</div>
+<div class="container">
+<button style="float:right;background-color: #810101;padding:5px;color:#ffffff;width:150px;height: 50px;font-family: Teko;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 34px;
+text-align: center;">Продолжить</button>
+<div style="width: 140px;height: 85px;text-align: center;float:right;font-family: Roboto;
+font-style: normal;
+line-height: 28px;
+text-align: center;
+
+color: #000000;
+"><p>Итого:</p> <p>1 помещение,  0 м2</p>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <script>
+    function func(){
+          var quantity = Number(document.getElementById("num1").value);
+    
+          document.getElementById("quantity").innerHTML=quantity
+          var price = quantity * 292   
+          document.getElementById("price").innerHTML=price;
+          document.getElementById('table').classList.remove("hidden");
+          document.getElementById("cube").innerHTML = quantity*0.015;
+    }
+    function Vannaya() {
+          var table = document.getElementById("tb1");
+          var row = table.insertRow(-1);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+          var cell6 = row.insertCell(5);
+          cell1.innerHTML = "<th style='text-align:center;'><p style='text-align:center;font'>Ванная</p></td>";
+          cell2.innerHTML = "<th><input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;height:75px;'></th>";
+          cell3.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell4.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell5.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell6.innerHTML = "<i style='padding:auto;' class='bi bi-trash'></i>";
+    }
+    function Gostinaya() {
+          var table = document.getElementById("tb1");
+          var row = table.insertRow(-1);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+          var cell6 = row.insertCell(5);
+          cell1.innerHTML = "<th style='text-align:center;'><p style='text-align:center;font'>Гостиная</p></td>";
+          cell2.innerHTML = "<th style='height:75px;'><input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;height:75px;'></th>";
+          cell3.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell4.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell5.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell6.innerHTML = "<i class='bi bi-trash' style='text-align:center;'></i>";
+    }
+    function Sanuzel() {
+          var table = document.getElementById("tb1");
+          var row = table.insertRow(-1);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+          var cell6 = row.insertCell(5);
+          cell1.innerHTML = "<th style='text-align:center;'><p style='text-align:center;font'>Санузел</p></td>";
+          cell2.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;height:75px;''>";
+          cell3.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell4.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell5.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell6.innerHTML = "<i class='bi bi-trash'></i>";
+    }
+    function Drugoe() {
+          var table = document.getElementById("tb1");
+          var row = table.insertRow(-1);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+          var cell6 = row.insertCell(5);
+          cell1.innerHTML = "<th style='text-align:center;'><p style='text-align:center;font'>Другое</p></td>";
+          cell2.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;height:75px;''>";
+          cell3.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell4.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell5.innerHTML = "<input type='number' placeholder='0.00' style='border:none;outline: none;text-align:center;''>";
+          cell6.innerHTML = "<i class='bi bi-trash'></i>";
+    }
+ </script>
+
+{% endblock %}

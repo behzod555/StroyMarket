@@ -1,0 +1,198 @@
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+<style>
+     @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
+.product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+
+.single-product p{
+  margin-left:22px;
+  font-size:20px;  
+}
+.product-foot{
+  width:160px;
+  height:50px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 5%;
+
+}
+
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:30px;
+  margin-top:-15px; 
+}
+.single-product .counter{
+  width: 50px;
+  height:80px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:-20px;
+  border-radius: 8px;
+
+  }
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  font-size:20px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:6%;
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:20px;
+
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+    color:black;
+}
+.single-product .counter .quantity input{
+  font-size:20px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:5%;
+  border: 0px solid;
+  outline:none;
+}
+ 
+</style>
+<div class="viewed">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="bbb_viewed_title_container">
+                    <h3 class="bbb_viewed_title">Recently Viewed</h3>
+                    <div class="bbb_viewed_nav_container">
+                        <div class="bbb_viewed_nav bbb_viewed_prev"><i class="fas fa-chevron-left"></i></div>
+                        <div class="bbb_viewed_nav bbb_viewed_next"><i class="fas fa-chevron-right"></i></div>
+                    </div>
+                </div>
+                <div class="bbb_viewed_slider_container">
+                    <div class="owl-carousel owl-theme bbb_viewed_slider">
+                         {% for product in products %}
+                      <div class="store col-lg-3 col-6">
+                        <div class="single-product">
+                          <div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px" class="code">Код: 51265</p>
+  {% if product in wishedProductsList %}
+  <i class="bi bi-heart-fill addWishlist" style="color: red" data-product="{{product.id}}" data-action="add"></i>
+  {% else %}
+  <i class="bi bi-heart addWishlist"  data-product="{{product.id}}" data-action="add"></i>
+  {% endif %}
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+
+  </div>
+  <div class="product-image">
+    <a href="{% url 'product_details' product.category.slug product.slug %}"><img style="width: 100%;height: 100%;" src="{{product.imageURL}}"></a>
+  </div>
+  <p style="color:#617375;">В наличии</p>
+  <p style="color:black;">{{product.name}}</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p class="price">Цена: {{product.price}}</p>
+
+  <div class="counter">
+    <div class="arrow-up increase" id="arrow-up" data-product="{{product.id}}" data-action="plus" ><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" class="quantity" value="1" data-product="{{product.id}}"></div>
+    <div class="arrow-down increase" id="arrow-down" data-product="{{product.id}}" data-action="minus"><i class="fa fa-arrow-down"></i></div>
+</div>
+  <div class="product-foot"><div class="product-action-2">
+                                <button data-product="{{product.id}}" style="width:100%;height: 50px;" data-action="add" class="btn btn-outline-secondary add-btn update-cart">В Корзину</button>
+                              </div></div>
+ 
+</div>
+                        </div>
+                      </div>
+                        {% endfor %}
+                       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).ready(function()
+{
+
+
+if($('.bbb_viewed_slider').length)
+{
+var viewedSlider = $('.bbb_viewed_slider');
+
+viewedSlider.owlCarousel(
+{
+loop:true,
+margin:30,
+autoplay:true,
+autoplayTimeout:6000,
+nav:false,
+dots:false,
+responsive:
+{
+0:{items:1},
+575:{items:2},
+768:{items:3},
+991:{items:4},
+}
+});
+
+if($('.bbb_viewed_prev').length)
+{
+var prev = $('.bbb_viewed_prev');
+prev.on('click', function()
+{
+viewedSlider.trigger('prev.owl.carousel');
+});
+}
+
+if($('.bbb_viewed_next').length)
+{
+var next = $('.bbb_viewed_next');
+next.on('click', function()
+{
+viewedSlider.trigger('next.owl.carousel');
+});
+}
+}
+
+
+});
+    </script>

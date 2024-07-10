@@ -1,0 +1,573 @@
+{% extends 'store/main.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+ 
+@media screen and (min-width: 1670px) {
+  .heading-store{
+  text-align: center;
+}
+
+ .square1{
+  margin-right: 10.5%;
+  border: 1px solid #810101;
+box-sizing: border-box;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+width:14%;
+display: inline-block;
+height: 40%;
+ }
+ .square1 img{
+  width:100%;
+  height: 100%;
+ }
+  .single-product{
+  height:530px;
+  width:270px;
+  background-color:#C4C4C4;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+  .product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+
+.single-product p{
+  margin-left:22px;
+  font-size:16px;  
+}
+.product-foot{
+  width:160px;
+  height:50px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 5%;
+}
+.product-foot button{
+  width:100%;
+  height: 100%;
+}
+
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:20px;
+  margin-top:-15px; 
+}
+.single-product .counter{
+  width: 50px;
+  height:80px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:-20px;
+  border-radius: 8px;
+}
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  font-size:20px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:6%;
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:20px;
+
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+  color:black;
+}
+.single-product .counter .quantity input{
+  font-size:20px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:5%;
+  border: 0px solid;
+  outline:none;
+}
+.squares{
+  margin-left:7%;
+  height: 350px;
+
+}
+.square{
+  border:1px solid black;
+  width: 270px;
+  height: 214px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+
+
+
+.angle-left{
+  
+  height:40px;
+  width: 15px;
+  z-index:10;
+  margin-left:8%;
+  margin-right: 0;
+  margin-bottom:0;
+  position: relative;
+  top:300px;
+  }
+.angle-right{
+  height:40px;
+  width: 15px;
+  margin-left:87%;
+  top:-350px;
+  z-index:10;
+  position: relative;
+  bottom:300px;
+}
+.square-container-content{
+position: relative;
+margin-left:50px;
+top:20px;
+width: 200px;
+}
+.square-container-content p{
+  text-align: center;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #000000;
+}
+.square-container{
+  margin-right:50px;
+}
+}
+@media screen and (min-width: 1251px) and (max-width: 1670px) {
+  .heading-store{
+  text-align: center;
+}
+.square{
+  margin-right:2%;
+ }
+ .square1{
+  margin-right:10.5%;
+  border: 1px solid #810101;
+box-sizing: border-box;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+width:14%;
+display: inline-block;
+height: 40%;
+ }
+ .square1 img{
+  width:100%;
+  height: 100%;
+ }
+  .container{
+    width:80%;
+  }
+  .single-product{
+  height:450px;
+  width:230px;
+  background-color:#C4C4C4;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+  .product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+.single-product .btn{
+  font-size: 14px;
+  padding:0;
+  width:100%;
+  height: 50px;
+}
+.single-product p{
+  margin-left:22px;
+  font-size:14px;  
+}
+.product-foot{
+  width:120px;
+  height:30px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 17%;
+  font-size: 15px; 
+}
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:18px;
+  margin-top:-15px; 
+}
+.single-product .counter{
+  width: 50px;
+  height:90px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:0;
+  border-radius: 8px;
+
+  }
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+  margin-top:0;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  font-size:18px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:15%;
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:18px;
+
+}
+.single-product p{
+  margin-top:-10px;
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+  color:black;
+}
+.single-product .counter .quantity input{
+  font-size:23px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:5%;
+  border: 0px solid;
+  outline:none;
+}
+.squares{
+  margin-left:15%;
+}
+.square{
+  border:2px solid black;
+  width: 100px;
+  height: 160px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+.middle-product{
+  height: 100px;
+}
+.middle-product .available{
+  margin-bottom:10px;
+}
+.middle-product .price{
+  margin-top:10px;
+}
+.angle-left{
+  
+  height:40px;
+  width: 15px;
+  z-index:10;
+  margin-left:7%;
+  margin-right: 0;
+  margin-bottom:0;
+  position: relative;
+  top:280px;
+  }
+.angle-right{
+  height:40px;
+  width: 15px;
+  margin-right:100%;
+  top:-290px;
+  z-index:10;
+  position: relative;
+}
+.square-container-content{
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #000000;
+position: absolute;
+left:0;
+bottom: 0;
+}
+.square-container-content{
+position: relative;
+margin-left:50px;
+top:20px;
+width: 200px;
+}
+.square-container-content p{
+  text-align: center;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #000000;
+}
+.square-container{
+  margin-right:50px;
+}
+}
+@media screen and (min-width: 900px) and (max-width: 1250px) {
+  .heading-store{
+  text-align: center;
+}
+.square{
+  margin-right:2%;
+ }
+ .square1{
+  margin-right:10.5%;
+  border: 1px solid #810101;
+box-sizing: border-box;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+width:14%;
+display: inline-block;
+height: 40%;
+ }
+ .square1 img{
+  width:100%;
+  height: 100%;
+ }
+  .middle-product{
+  height: 70px;
+}
+.middle-product .available{
+  margin-bottom:5px;
+}
+.middle-product .price{
+  margin-top:5px;
+}
+  .single-product{
+  height:380px;
+  width:180px;
+  background-color:#C4C4C4;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+  .product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+.single-product .btn{
+  font-size: 12px;
+  padding:0;
+  width:100%;
+  height: 30px;
+}
+.single-product p{
+  margin-left:22px;
+  font-size:14px;  
+}
+.product-foot{
+  width:100px;
+  height:40px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 30%;
+  font-size: 15px; 
+}
+.product-foot .btn{
+  height: 40px;
+}
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:13px;
+  margin-top:-15px; 
+}
+.single-product .counter{
+  width: 40px;
+  height:70px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:10%;
+  border-radius: 8px;
+
+  }
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+  margin-top:-4%;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  font-size:15px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:-8%;
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:15px;
+
+}
+.single-product p{
+  margin-top:-10px;
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+  color:black;
+}
+.single-product .counter .quantity input{
+  font-size:20px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:5%;
+  border: 0px solid;
+  outline:none;
+}
+.squares{
+  height: 350px;
+}
+.square{
+  border:2px solid black;
+  width: 250px;
+  height: 200px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+}
+/*.squares{
+  height: 350px;
+}
+.square{
+  border:2px solid black;
+  width: 332px;
+  height: 268px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+
+.square img{
+  border-radius: 20px;
+  width:100%;
+  height: 100%;
+}*/
+.price{
+  color:black;
+  margin-top:5%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style>
+<br>
+<h3 class="heading-store" style="text-align: center;">{{query_name}}</h3>
+<br>
+<div class="row owl-carousel" id="carousel-1" style="width:70%;margin-right: 15%;margin-left:15%;">
+
+  {% for product in results %}
+                      <div class="store col-lg-3 col-6 item">
+                        <div class="single-product">
+                          <div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px" class="code">Код: 51265</p>
+  {% if product in wishedProductsList %}
+  <i class="bi bi-heart-fill addWishlist" style="color: red" data-product="{{product.id}}" data-action="add"></i>
+  {% else %}
+  <i class="bi bi-heart addWishlist"  data-product="{{product.id}}" data-action="add"></i>
+  {% endif %}
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+
+  </div>
+  <div class="product-image" style="padding:10%;">
+    <a href="{% url 'product_details' product.category.slug product.slug %}"><img style="width: 100%;height: 100%;" src="{{product.imageURL}}"></a>
+  </div>
+  <div class="middle-product">
+    <div class="middle-product-content">
+  <p class="available" style="color:#617375;">В наличии</p>
+  <p class="product-name" style="color:black;">{{product.name}}</p>
+  <p class="product-description">.....</p>
+  <p>.....</p>
+</div>
+  <p class="price">Цена: {{product.price}}</p>
+</div>
+  <div class="counter">
+    <div class="arrow-up increase" id="arrow-up" data-product="{{product.id}}" data-action="plus" ><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" class="quantity" value="1" data-product="{{product.id}}"></div>
+    <div class="arrow-down increase" id="arrow-down" data-product="{{product.id}}" data-action="minus"><i class="fa fa-arrow-down"></i></div>
+</div>
+  <div class="product-foot"><div class="product-action-2">
+                                <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">В Корзину</button>
+                              </div></div>
+ 
+</div>
+                        </div>
+                      </div>
+                        {% endfor %}
+                      </div>
+{% endblock %}

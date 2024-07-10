@@ -1,0 +1,223 @@
+{% extends 'store/main.html' %}
+
+{% load static %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<div class="">
+<div class="catalog-div">
+<div class="catalog-img">
+<div class="row" style="width:85%;position: relative; left:10%;">
+
+											<div class="col-lg-3 col-6">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{% url 'Bytovye' %}">
+															<img class="default-img" alt="#" src="{% static 'images/bytovye-texniki.jpg'%}">
+															
+														</a>
+												
+													</div>
+													<div class="product-content">
+														<h3><a href="product-details.html">Бытовые Техники</a></h3>
+														<div class="product-price">
+															<span>{{quantityBytovye}} товаров</span>
+														</div>
+													</div>
+												</div>
+											</div>
+							
+								
+		<div class="col-lg-3 col-6">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{% url 'telefon' %}">
+															<img class="default-img" src="{% static 'images/telefony.png'%}" alt="#">
+															
+														</a>
+												
+													</div>
+													<div class="product-content">
+														<h3><a href="{% url 'telefon' %}">Телефоны</a></h3>
+														<div class="product-price">
+															<span>{{quantityTelefon}} товаров</span>
+														</div>
+													</div>
+												</div>
+											</div>
+								
+		<div class="col-lg-3 col-6">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{% url 'televizory' %}">
+															<img class="default-img" src="{% static 'images/televizory.jpg'%}" alt="#">
+															
+														</a>
+												
+													</div>
+													<div class="product-content">
+														<h3><a href="{% url 'televizory' %}">Телевизоры</a></h3>
+														<div class="product-price">
+															<span>{{quantityTelevizor}} товаров</span>
+														</div>
+													</div>
+												</div>
+											</div>
+													<div class="col-lg-3 col-6">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{% url 'Komputernaya' %}">
+															<img class="default-img" src="{% static 'images/komputernye-texniki.jpg'%}" alt="#">
+															
+														</a>
+												
+													</div>
+													<div class="product-content">
+														<h3><a href="{% url 'Komputernaya' %}">Компьютерные техники</a></h3>
+														<div class="product-price">
+															<span>{{quantityKomputernaya}} товаров</span>
+														</div>
+													</div>
+												</div>
+											</div>
+</div>
+		
+</div>
+</div>
+</div>
+<div class="catalog-img">
+<div class="row" style="width:85%;position: relative; left:10%;">
+
+											<div class="col-lg-3 col-6">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{% url 'Klimaticheskaya' %}">
+															<img class="default-img" alt="#" src="{% static 'images/klimaticheskie-texniki.jpg'%}">
+															
+														</a>
+												
+													</div>
+													<div class="product-content">
+														<h3><a href="{% url 'Klimaticheskaya' %}">Климатические техники</a></h3>
+														<div class="product-price">
+															<span>{{quantityKlimaticheskie}} товаров</span>
+														</div>
+													</div>
+												</div>
+											</div>
+							
+								
+		<div class="col-lg-3 col-6">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{% url 'Sportivnye' %}">
+															<img class="default-img" src="{% static 'images/sportivnye-tovary.jpg'%}" alt="#">
+															
+														</a>
+												
+													</div>
+													<div class="product-content">
+														<h3><a href="{% url 'Sportivnye' %}">Спортивные товары</a></h3>
+														<div class="product-price">
+															<span>{{quantitySport}} товаров</span>
+														</div>
+													</div>
+												</div>
+											</div>
+								
+		<div class="col-lg-3 col-6">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="{% url 'Mujskie' %}">
+															<img class="default-img" src="{% static 'images/mujskie-tufli.jpg'%}" alt="#">
+															
+														</a>
+												
+													</div>
+													<div class="product-content">
+														<h3><a href="{% url 'Mujskie' %}">Мужские туфли</a></h3>
+														<div class="product-price">
+															<span>{{quantityTufli}} товаров</span>
+														</div>
+													</div>
+												</div>
+											</div>
+													
+</div>
+		
+</div>
+</div>
+</div>
+</div>
+</div>
+<!--<div class="catalog-img">
+<div class="row" style="width:85%;position: relative; left:10%;">
+<div class="col-lg-3">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="product-details.html">
+															<img class="default-img" src="{% static 'images/klima.png'%}" alt="#">
+															
+														</a>
+												
+													</div>
+													<div class="product-content">
+														<h3><a href="product-details.html">Климатические техники</a></h3>
+														<div class="product-price">
+															<span>{{quantityKlimaticheskie}} товаров</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+</div>
+<div class="col-lg-3">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="product-details.html">
+															<img class="default-img" src="{% static 'images/sportivnye-tovary.jpg'%}" alt="#">
+															
+														</a>
+												
+													</div>
+													<div class="product-content">
+														<h3><a href="product-details.html">Спортивные товары</a></h3>
+														<div class="product-price">
+															<span>{{quantitySport}} товаров</span>
+														</div>
+													</div>
+												</div>
+											</div>
+</div>
+<div class="col-lg-3">
+												<div class="single-product">
+													<div class="product-img">
+														<a href="product-details.html">
+															<img class="default-img" src="{% static 'images/mujskie-tufli.jpg'%}" alt="#">
+															
+														</a>
+												
+													</div>
+													<div class="product-content">
+														<h3><a href="product-details.html">Мужские туфли</a></h3>
+														<div class="product-price">
+															<span>{{quantityTufli}} товаров товаров</span>
+														</div>
+													</div>
+												</div>
+											</div>
+</div>
+
+
+</div>-->
+
+		<script>
+		
+	    	document.getElementById('main').classList.remove("active");
+	    	document.getElementById('catalog').classList.add("active");
+	
+	</script>
+{% endblock content %}

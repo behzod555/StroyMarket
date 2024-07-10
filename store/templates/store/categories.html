@@ -1,0 +1,885 @@
+{% extends 'store/main.html' %}
+
+{% load static %}
+{% block content %}
+<style>
+
+
+.center {
+  margin: auto;
+  width: 80%;
+
+  padding: 10px;
+}
+
+.container-categories{
+  border: 1px solid grey;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+padding:0;
+z-index: 9999;
+}
+
+.without-categories{
+  position: relative;
+  top:450px;
+  left:-300px;
+}
+.inline{
+  display: inline-block;
+}
+@media screen and (min-width: 1670px) {
+  .single-category{
+  height: 200px;
+  margin-bottom: 90px;
+}
+
+.main-container{
+  width:90%;
+  margin-left:600px;
+}
+.middle-product-content{
+  height: 110px;
+}
+.container-products{
+  width: 1600px;
+  margin-left:15%;
+  position: relative;
+  top:-500px;
+}
+.main-container{
+  display: inline-block;
+  position: relative;
+  top:-600px;
+  left:-400px;
+}
+.category-img{
+  
+  height: 15%;
+}
+.container-categories{
+  width:380px;
+  display: inline-block;
+  margin-left:150px;
+
+}
+.category-img{
+  
+  height: 15%;
+}
+.category-img{
+  height: 100%;
+}
+.category-content{
+  
+  border-radius: 40px;
+  margin:5%;
+  text-align: center;
+}
+.category-title{
+  font-size: 18px;
+  margin:2%;
+}
+  .single-product{
+  height:530px;
+  width:270px;
+  background-color:#C4C4C4;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+  .product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+
+.single-product p{
+  margin-left:22px;
+  font-size:16px;  
+}
+.product-foot{
+  width:160px;
+  height:50px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 70px;
+}
+.product-foot button{
+  width:100%;
+  height: 100%;
+}
+
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:20px;
+  margin-top:-15px; 
+}
+.single-product .counter{
+  width: 50px;
+  height:80px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:30px;
+  border-radius: 8px;
+
+  }
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  font-size:20px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:6%;
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:20px;
+
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+  color:black;
+}
+.single-product .counter .quantity input{
+  font-size:20px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:5%;
+  border: 0px solid;
+  outline:none;
+}
+.squares{
+  margin-left:15%;
+
+}
+.square{
+  border:2px solid black;
+  width: 332px;
+  height: 268px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+.square1{
+  margin-right:250px;
+}
+.angle-left{
+  
+  height:40px;
+  width: 15px;
+  z-index:10;
+  margin-left:8%;
+  margin-right: 0;
+  margin-bottom:0;
+  position: relative;
+  top:300px;
+  left:-170px;
+  }
+.angle-right{
+  height:40px;
+  width: 15px;
+  margin-left:87%;
+  top:-350px;
+  z-index:10;
+  position: relative;
+  bottom:300px;
+  left:110px;
+}
+.single-category{
+  height: 200px;
+  width: 250px;
+  }
+  .middle-product{
+  height: 100px;
+}
+.middle-product .available{
+  margin-bottom:10%;
+}
+.middle-product .price{
+  margin-top:10%;
+}
+}
+@media screen and (min-width: 1401px) and (max-width: 1670px) {
+  .container-categories{
+  width:300px;
+  margin-left:50px;
+}
+.main-container{
+  position: relative;
+  top:-650px;
+  width:500%;
+
+}
+
+.without-categories{
+  
+  
+}
+.container-products{
+  width: 1200px;
+  margin-left:15%;
+  
+}
+  .single-category{
+  height: 200px;
+  width: 250px;
+  margin-bottom: 90px;
+
+  }
+.category-img{
+  
+  height: 15%;
+}
+.category-img{
+  height: 100%;
+}
+.category-content{
+  
+  border-radius: 40px;
+  margin:5%;
+  text-align: center;
+}
+.category-title{
+  font-size: 18px;
+  margin:2%;
+}
+  .container{
+    width:80%;
+  }
+  .single-product{
+  height:400px;
+  width:200px;
+  background-color:#C4C4C4;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+  .product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+.single-product .btn{
+  font-size: 12px;
+  padding:0;
+  width:100%;
+  height: 40px;
+}
+.single-product p{
+  margin-left:22px;
+  font-size:14px;  
+}
+.container-products{
+  position: relative;
+  top:0;
+}
+.product-foot{
+  width:90px;
+  height:5px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 30px;
+  font-size: 14px; 
+}
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:18px;
+  margin-top:-15px; 
+}
+.single-product .counter{
+  width:35px;
+  height:70px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:0;
+  border-radius: 8px;
+
+  }
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+  margin-top:1px;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  position: relative;
+  top:-5px;
+  font-size:14px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:15%;
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:14px;
+  position: relative;
+  top:-10px;
+
+}
+.single-product p{
+  margin-top:-10px;
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+  color:black;
+}
+.single-product .counter .quantity input{
+  font-size:18px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:;
+  position: relative;
+  top:-5px;
+  border: 0px solid;
+  outline:none;
+}
+.squares{
+  margin-left:15%;
+}
+.square{
+  border:2px solid black;
+  width: 250px;
+  height: 200px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+.middle-product{
+  height: 100px;
+}
+.middle-product .available{
+  margin-bottom:10%;
+}
+.middle-product .price{
+  
+}
+.angle-left{
+  
+  height:40px;
+  width: 15px;
+  z-index:10;
+  margin-left:7%;
+  margin-right: 0;
+  margin5bottom:0;
+  position: relative;
+  top:230px;
+  left:-120px;
+  }
+.angle-right{
+  height:40px;
+  width: 15px;
+  margin-right:100%;
+  top:-290px;
+  z-index:10;
+  position: relative;
+  left:1130px;
+}
+.container-products{
+    position:relative;
+    top:-500px;
+}
+}
+
+@media screen and (min-width: 1251px) and (max-width: 1400px) {
+ .container-categories{
+  width:250px;
+  margin-left:10px;
+}
+.main-container{
+  position: relative;
+  left:-150px;
+  width: 80%;
+}
+.category-content{
+  
+  border-radius: 40px;
+  margin:5%;
+  text-align: center;
+}
+.single-category{
+  margin-right:20px;
+}
+
+}
+@media screen and (min-width: 900px) and (max-width: 1250px) {
+
+  .single-category{
+  height: 200px;
+  margin-bottom: 90px;
+  }
+  .without-categories{
+  
+  
+  
+}
+.main-container{
+  width: 80%;
+}
+.category-content{
+  
+  border-radius: 40px;
+  margin:5%;
+  text-align: center;
+  font-size:12px;
+}
+ .container-categories{
+  width:250px;
+  margin-left:0px;
+  position: relative;
+  top:1000px;
+}
+.category-img{
+  
+  height: 15%;
+}
+.category-img{
+  height: 100%;
+}
+.category-content{
+  background: #C4C4C4;
+  border-radius: 40px;
+  margin:5%;
+  text-align: center;
+}
+.category-title{
+  font-size: 18px;
+  margin:2%;
+}
+  .middle-product{
+  height: 70px;
+}
+.middle-product .available{
+  margin-bottom:5px;
+}
+.middle-product .price{
+  margin-top:5px;
+}
+  .single-product{
+  height:380px;
+  width:180px;
+  background-color:#C4C4C4;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+  .product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+.single-product .btn{
+  font-size: 12px;
+  padding:0;
+  width:100%;
+  height: 30px;
+}
+.single-product p{
+  margin-left:22px;
+  font-size:15px;  
+}
+.product-foot{
+  width:100px;
+  height:40px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 30%;
+  font-size: 15px; 
+}
+.product-foot .btn{
+  height: 40px;
+}
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:13px;
+  margin-top:-15px; 
+}
+.single-product .counter{
+  width: 40px;
+  height:70px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:10%;
+  border-radius: 8px;
+
+  }
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+  margin-top:-4%;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  font-size:15px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:-8%;
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:15px;
+
+}
+.single-product p{
+  margin-top:-10px;
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+  color:black;
+}
+.single-product .counter .quantity input{
+  font-size:20px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:5%;
+  border: 0px solid;
+  outline:none;
+}
+.squares{
+  height: 350px;
+}
+.square{
+  border:2px solid black;
+  width: 250px;
+  height: 200px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+}
+/*.squares{
+  height: 350px;
+}
+.square{
+  border:2px solid black;
+  width: 332px;
+  height: 268px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+
+.square img{
+  border-radius: 20px;
+  width:100%;
+  height: 100%;
+}*/
+.price{
+  color:black;
+  margin-top:5%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style>
+
+<!--<div class="breadcrumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="bread-inner">
+						<ul class="bread-list">
+							<li><a href="{% url 'store' %}">Главная<i class="ti-arrow-right"></i></a></li>
+							<li class="active"><a href="{% url 'category_detail' category.slug %}">{{category.title}}</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>-->
+  <h3 class="heading-store center">{{category.title}}</h3>
+  <br>
+  <br>
+  <div class="row">
+  <div class="container-categories" id="container-categories" >
+    {% for category in categories %}
+        <div class="" style="margin:20px;">
+                {% if not category.children.all %}
+            <a href="{% url 'category_detail' category.slug %}"><strong style="font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 27px;
+z-index:9999999;
+color: #000000;
+">{{category.title}}</strong></a>
+          {% else %}
+          <a href="{% url 'category_detail' category.slug %}"><strong style="font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 27px;
+z-index:9999999;
+color: #000000;
+">{{category.title}}</strong></a>
+            {% for subcategory in category.children.all %}
+              <p><a href="{% url 'category_detail' subcategory.slug %}" style="color:#000000;">{{ subcategory.title }}</a></p>
+            {% endfor %}
+          {% endif %}
+        </div>
+      {% endfor %}
+  </div>
+
+  <div class="main-container" id="main-container">
+<div class="row" style="width:70%;margin-left:30%;margin-right: 15%;margin-bottom: 100px;" >
+ {% if category.children.all %}
+
+ {% for subcategory in category.children.all %}
+                      <div class="col-lg-3 col-6">
+                        <div class="single-category">
+                          <div class="category-img">
+                            <a href="{% url 'category_detail' subcategory.slug %}">
+                              <img class="default-img" alt="#" src="{{subcategory.imageURL}}" width="100%" height="100%" style="">
+                              
+                            </a>
+                        
+                          </div>
+                          <div class="category-content">
+                            <h3><a class="category-title" href="{% url 'category_detail' subcategory.slug %}">{{subcategory.title}}</a></h3>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  
+
+</div>
+                      <div class="container-products">
+<h3 class="heading-store" style="text-align: center;">{{category.title}}</h3>
+
+<div class="angle angle-left prev" id="prev"><img src="{% static 'images/angle-left.png' %}"></div>
+
+<div class="row owl-carousel">
+
+  {% for product in products_all %}
+                      <div class="store col-lg-3 col-6 item">
+                        <div class="single-product">
+                          <div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px" class="code">Код: 51265</p>
+  {% if product in wishedProductsList %}
+  <i class="bi bi-heart-fill addWishlist" style="color: red" data-product="{{product.id}}" data-action="add"></i>
+  {% else %}
+  <i class="bi bi-heart addWishlist"  data-product="{{product.id}}" data-action="add"></i>
+  {% endif %}
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+
+  </div>
+  <div class="product-image" style="padding:10%;">
+    <a href="{% url 'product_details' product.category.slug product.slug %}"><img style="width: 100%;height: 100%;" src="{{product.imageURL}}"></a>
+  </div>
+  <div class="middle-product">
+    <div class="middle-product-content">
+  <p class="available" style="color:#617375;">В наличии</p>
+  <p class="product-name" style="color:black;">{{product.name}}</p>
+  <p class="product-description">.....</p>
+  <p>.....</p>
+</div>
+  <p class="price">Цена: {{product.price}}</p>
+</div>
+
+  <div class="counter">
+    <div class="arrow-up increase" id="arrow-up" data-product="{{product.id}}" data-action="plus" ><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" class="quantity" value="1" data-product="{{product.id}}"></div>
+    <div class="arrow-down increase" id="arrow-down" data-product="{{product.id}}" data-action="minus"><i class="fa fa-arrow-down"></i></div>
+</div>
+  <div class="product-foot"><div class="product-action-2">
+                                <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">В Корзину</button>
+                              </div></div>
+ 
+</div>
+                        </div>
+                      </div>
+                        {% endfor %}
+                      </div>
+                      <div class="angle angle-right next" id="next"><img src="{% static 'images/angle-right.png' %}"></div>
+                    </div>
+
+
+</div>
+
+                      {% else %}
+
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="row" style="width: 150%;">
+
+  {% for product in products_all %}
+                      <div class="store col-lg-3 col-6 item">
+                        <div class="single-product">
+                          <div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px" class="code">Код: 51265</p>
+  {% if product in wishedProductsList %}
+  <i class="bi bi-heart-fill addWishlist" style="color: red" data-product="{{product.id}}" data-action="add"></i>
+  {% else %}
+  <i class="bi bi-heart addWishlist"  data-product="{{product.id}}" data-action="add"></i>
+  {% endif %}
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+
+  </div>
+  <div class="product-image" style="padding:10%;">
+    <a href="{% url 'product_details' product.category.slug product.slug %}"><img style="width: 100%;height: 100%;" src="{{product.imageURL}}"></a>
+  </div>
+  <div class="middle-product">
+    <div class="middle-product-content">
+  <p class="available" style="color:#617375;">В наличии</p>
+  <p class="product-name" style="color:black;">{{product.name}}</p>
+  <p class="product-description">.....</p>
+  <p>.....</p>
+</div>
+  <p class="price">Цена: {{product.price}}</p>
+</div>
+
+  <div class="counter">
+    <div class="arrow-up increase" id="arrow-up" data-product="{{product.id}}" data-action="plus" ><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" class="quantity" value="1" data-product="{{product.id}}"></div>
+    <div class="arrow-down increase" id="arrow-down" data-product="{{product.id}}" data-action="minus"><i class="fa fa-arrow-down"></i></div>
+</div>
+  <div class="product-foot"><div class="product-action-2">
+                                <button data-product="{{product.id}}" style="width:100%;height: 50px;" data-action="add" class="btn btn-outline-secondary add-btn update-cart">В Корзину</button>
+                              </div></div>
+ 
+</div>
+                        </div>
+                      </div>
+                        {% endfor %}
+                      </div>
+
+{% endif %}
+
+</div>
+</div>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script>
+ 
+  $('.owl-carousel').owlCarousel({
+    margin:10,
+    responsive:{
+        0:{
+              items:1
+        },
+        300:{
+              items:2
+        },
+        600:{
+              items:3
+        },
+        900:{
+              items:4
+        },
+        
+    }
+})
+  var owl = $('.owl-carousel');
+owl.owlCarousel();
+  $('.next').click(function() {
+    owl.trigger('next.owl.carousel');
+})
+// Go to the previous item
+$('.prev').click(function() {
+    // With optional speed parameter
+    // Parameters has to be in square bracket '[]'
+    owl.trigger('prev.owl.carousel');
+})
+
+const countCategories = document.querySelectorAll('.single-category').length;
+
+if(countCategories==0){
+  var categoryContainer = document.getElementById("container-categories");
+  
+  categoryContainer.classList.add("hidden");
+ 
+
+}
+const countAll = document.querySelectorAll('.single-product').length;
+if(countAll==0 && countCategories==0){
+  var categoryContainer = document.getElementById("container-categories");
+  categoryContainer.classList.remove("hidden");
+  console.log("true")
+}
+
+if(countAll==0){
+  var prev = document.getElementById("prev");
+  var next = document.getElementById("next");
+  
+  prev.classList.add("hidden");
+  next.classList.add("hidden");
+}
+
+if(countAll==0 && countCategories==0){
+  var categoryContainer = document.getElementById("container-categories");
+  categoryContainer.classList.remove("hidden");
+  console.log("true")
+}
+</script>
+{% endblock %}

@@ -1,0 +1,1265 @@
+{% extends 'store/main.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+  .single-product .counter .arrow-down{
+    z-index: 999999999999;
+  }
+  .single-product .counter .arrow-up{
+    z-index: 999999999999;
+  }
+  
+@media screen and (min-width: 1671px) {
+  .heading-store{
+  text-align: center;
+}
+
+ .square1{
+  margin-right: 10.5%;
+  border: 1px solid #810101;
+box-sizing: border-box;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+width:14%;
+display: inline-block;
+height: 40%;
+ }
+ .square1 img{
+  width:100%;
+  height: 100%;
+ }
+  .single-product{
+  height:530px;
+  width:270px;
+  background-color:#C4C4C4;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+  .product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+
+.single-product p{
+  margin-left:22px;
+  font-size:16px;  
+}
+.product-foot{
+  width:160px;
+  height:50px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 5%;
+}
+.product-foot button{
+  width:100%;
+  height: 100%;
+}
+
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:20px;
+  margin-top:-12px; 
+}
+.single-product .counter{
+  width: 50px;
+  height:80px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:-20px;
+  border-radius: 8px;
+}
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  font-size:20px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:6%;
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:20px;
+
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+  color:black;
+}
+.single-product .counter .quantity input{
+  font-size:20px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:5%;
+  border: 0px solid;
+  outline:none;
+}
+.squares{
+  margin-left:7%;
+  height: 350px;
+
+}
+.square{
+  border:1px solid black;
+  width: 270px;
+  height: 214px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+
+
+
+.angle-left{
+  
+  height:20px;
+  width: 5px;
+  z-index:10;
+  margin-left:8%;
+  margin-right: 0;
+  margin-bottom:0;
+  position: relative;
+  top:300px;
+  }
+.angle-right{
+  height:20px;
+  width: 15px;
+  margin-left:87%;
+  top:-350px;
+  z-index:10;
+  position: relative;
+  bottom:300px;
+}
+.square-container-content{
+position: relative;
+margin-left:30px;
+top:20px;
+width: 200px;
+}
+.square-container-content p{
+  text-align: center;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #000000;
+}
+.square-container{
+  margin-right:50px;
+}
+.middle-product-content{
+  height: 110px;
+}
+}
+@media screen and (min-width: 1461px) and (max-width: 1670px) {
+  .middle-product{
+  height: 100px;
+}
+.middle-product .available{
+  margin-bottom:10px;
+}
+.middle-product .price{
+  margin-top:10px;
+}
+  .heading-store{
+  text-align: center;
+}
+.square-container-content{
+position: relative;
+margin-left:0px;
+top:20px;
+width: 170px;
+}
+.square{
+  margin-right:2%;
+ }
+ .square1{
+  margin-right:10.5%;
+  border: 1px solid #810101;
+box-sizing: border-box;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+width:14%;
+display: inline-block;
+height: 40%;
+ }
+ .square1 img{
+  width:100%;
+  height: 100%;
+ }
+  .container{
+    width:80%;
+  }
+  .single-product{
+  height:450px;
+  width:230px;
+  background-color:#C4C4C4;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+  .product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+.single-product .btn{
+  font-size: 14px;
+  padding:0;
+  width:100%;
+  height: 50px;
+}
+.single-product p{
+  margin-left:22px;
+  font-size:14px;  
+}
+.product-foot{
+  width:120px;
+  height:30px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 17%;
+  font-size: 15px; 
+}
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:18px;
+  margin-top:-12px; 
+}
+.single-product .counter{
+  width: 50px;
+  height:90px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:0;
+  border-radius: 8px;
+
+  }
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+  margin-top:0;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  font-size:18px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:10px;
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:18px;
+
+}
+.single-product p{
+  margin-top:-10px;
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+  color:black;
+}
+.single-product .counter .quantity input{
+  font-size:23px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:5%;
+  border: 0px solid;
+  outline:none;
+}
+.squares{
+  margin-left:55px;
+}
+.square{
+  border:2px solid black;
+  width: 200px;
+  height: 160px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 2%;
+}
+.middle-product{
+  height: 100px;
+}
+.middle-product .available{
+  margin-bottom:10px;
+}
+.middle-product .price{
+  margin-top:10px;
+}
+.angle-left{
+  
+  height:40px;
+  width: 15px;
+  z-index:10;
+  margin-left:8%;
+  margin-right: 0;
+  margin-bottom:0;
+  position: relative;
+  top:280px;
+  }
+.angle-right{
+  height:20px;
+  width: 5px;
+  top:-290px;
+  z-index:10;
+  position: relative;
+  left:88%;
+}
+.square-container-content{
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #000000;
+position: absolute;
+left:0;
+bottom: 0;
+}
+.square-container-content{
+position: relative;
+margin-left:0;
+top:20px;
+width: 200px;
+}
+.square-container-content p{
+  text-align: center;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #000000;
+}
+.square-container{
+  margin-right:50px;
+  padding-bottom: 50px;
+}
+}
+@media screen and (min-width: 1251px) and (max-width: 1460px) {
+  .heading-store{
+  text-align: center;
+}
+.middle-product{
+  height: 70px;
+}
+.middle-product .available{
+  margin-bottom:5px;
+}
+.middle-product .price{
+  margin-top:5px;
+}
+.square-container-content{
+position: relative;
+margin-left:10px;
+top:20px;
+width: 170px;
+}
+.square{
+  margin-right:2%;
+ }
+ .square1{
+  margin-right:10.5%;
+  border: 1px solid #810101;
+box-sizing: border-box;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+width:14%;
+display: inline-block;
+height: 40%;
+ }
+ .square1 img{
+  width:100%;
+  height: 100%;
+ }
+  .container{
+    width:80%;
+  }
+  .single-product{
+  height:450px;
+  width:230px;
+  background-color:#C4C4C4;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+  .product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+.single-product .btn{
+  font-size: 14px;
+  padding:0;
+  width:100%;
+  height: 50px;
+}
+.single-product p{
+  margin-left:22px;
+  font-size:14px;  
+}
+.product-foot{
+  width:120px;
+  height:30px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 17%;
+  font-size: 15px; 
+}
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:18px;
+  margin-top:-15px; 
+}
+.single-product .counter{
+  width: 50px;
+  height:90px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:0;
+  border-radius: 8px;
+
+  }
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+  margin-top:0;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  font-size:18px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:0;
+  
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:18px;
+
+}
+.single-product p{
+  margin-top:-10px;
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+  color:black;
+}
+.single-product .counter .quantity input{
+  font-size:23px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:5%;
+  border: 0px solid;
+  outline:none;
+}
+.squares{
+  margin-left:5%;
+}
+.square{
+  border:2px solid black;
+  width: 200px;
+  height: 160px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 5px;
+}
+.middle-product{
+  height: 100px;
+}
+.middle-product .available{
+  margin-bottom:10px;
+}
+.middle-product .price{
+  margin-top:10px;
+}
+.angle-left{
+  
+  height:40px;
+  width: 15px;
+  z-index:10;
+  margin-left:7%;
+  margin-right: 0;
+  margin-bottom:0;
+  position: relative;
+  top:280px;
+  }
+.angle-right{
+  height:20px;
+  width: 5px;
+  margin-left:92%;
+  top:-290px;
+  z-index:10;
+  position: relative;
+}
+.square-container-content{
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #000000;
+position: absolute;
+left:0;
+bottom: 0;
+}
+.square-container-content{
+position: relative;
+margin-left:0;
+top:20px;
+width: 200px;
+}
+.square-container-content p{
+  text-align: center;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+color: #000000;
+}
+.square-container{
+  margin-right:15px;
+  padding-bottom: 50px;
+}
+}
+@media screen and (min-width: 900px) and (max-width: 1250px) {
+  .square-container-content p{
+  text-align: center;
+  font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 13px;
+line-height: 22px;
+color: #000000;
+}
+  .square-container-content{
+position: relative;
+margin-left:0px;
+top:20px;
+width: 160px;
+}
+  .heading-store{
+  text-align: center;
+}
+.square{
+  margin-right:2%;
+ }
+ .square1{
+  margin-right:10.5%;
+  border: 1px solid #810101;
+box-sizing: border-box;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)) drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+width:14%;
+display: inline-block;
+height: 40%;
+ }
+ .square1 img{
+  width:100%;
+  height: 100%;
+ }
+  .middle-product{
+  height: 70px;
+}
+.middle-product .available{
+  margin-bottom:5px;
+}
+.middle-product .price{
+  margin-top:5px;
+}
+  .single-product{
+  height:380px;
+  width:180px;
+  background-color:#C4C4C4;
+  padding-top:0px;
+  padding-bottom:0px;
+}
+  .product-image{
+  background-color:white;
+  height:45%;
+  width:83%;
+  margin:8%;
+  
+}
+.single-product .btn{
+  font-size: 12px;
+  padding:0;
+  width:100%;
+  height: 30px;
+}
+.single-product p{
+  margin-left:22px;
+  font-size:14px;  
+}
+.product-foot{
+  width:100px;
+  height:40px;
+  background-color:white;
+  margin-left:15px;
+  margin-top: 30%;
+  font-size: 15px; 
+}
+.product-foot .btn{
+  height: 40px;
+}
+.header-single-product{
+  height:10px;
+  padding-top: 15px;
+}
+.header-single-product i{
+  float:right;
+  margin-right:20px;
+  font-size:13px;
+  margin-top:-15px; 
+}
+.single-product .counter{
+  width: 40px;
+  height:70px;
+  background-color:white;
+  float:right;
+  margin-right:20px;
+  margin-top:10%;
+  border-radius: 8px;
+
+  }
+.single-product .counter .arrow-up{
+  width:100%;
+  cursor:pointer;
+  margin-top:-4%;
+}
+.single-product .counter .arrow-up i{
+  margin-left:30%;
+  width: 50%;
+  font-size:15px;
+}
+.single-product .counter .arrow-down{
+  width:100%;
+  height:20%;
+  cursor:pointer;
+  margin-top:-8%;
+}
+.single-product .counter .arrow-down i{
+  margin-left:30%;
+  font-size:15px;
+
+}
+.single-product p{
+  margin-top:-10px;
+}
+.yellow{
+  background-color:#C4C4C4;
+  border-radius: 8px;
+}
+.single-product .counter .quantity{
+  width:100%;
+}
+.code{
+  color:black;
+}
+.single-product .counter .quantity input{
+  font-size:20px;
+  width:90%;
+  margin-bottom:0px;
+  text-align: center;
+  margin-top:5%;
+  border: 0px solid;
+  outline:none;
+}
+.squares{
+  height: 350px;
+}
+.square{
+  border:2px solid black;
+  width: 180px;
+  height: 120px;
+  float:left;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+}
+/*.squares{
+	height: 350px;
+}
+.square{
+	border:2px solid black;
+	width: 332px;
+	height: 268px;
+	float:left;
+	border-radius: 20px;
+	margin-right: 2%;
+}
+
+.square img{
+  border-radius: 20px;
+  width:100%;
+  height: 100%;
+}*/
+.price{
+	color:black;
+	margin-top:5%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+</style>
+	<!--<section class="hero-slider">
+	
+		<div class="single-slider">
+      <img src="{% static 'images/arrow-left-1.png' %}">
+      <img src="{% static 'images/ad.png' %}" style="width: 100%;height: 100%;">
+      <img src="{% static 'images/arrow-right-2.png' %}" style="margin-left:5%;">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-lg-9 offset-lg-3 col-12">
+						<div class="text-inner">
+							<div class="row">
+								<div class="col-lg-7 col-12">
+									<div class="hero-text">
+										    
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>-->
+  <br>
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="width:70%;margin-left: 15%;margin-right: 15%;">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="{% static 'images/ad1.PNG' %}" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="{% static 'images/ad2.png' %}" alt="Second slide">
+    </div>
+    
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style="margin-left:-10%";>
+    <img src="{% static 'images/arrow-left-1.png' %}" style="width:15%;height: 10%;">
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" style="margin-right:-10%;">
+    <img src="{% static 'images/arrow-right-2.png' %}" style="width:15%;height: 10%;">
+  </a>
+</div>
+
+</div>
+<br>
+
+
+	<br>
+	<br>
+	<br>
+	
+		<br>
+<div class="square-container" style="width:75%;margin-left: 13%;margin-right: 13%;">
+  <div class="squares">
+    <div class="square-container">
+	<div class="square"><img src="{% static 'images/1.png' %}"></div>
+
+  <div class="square-container-content"><p>Расчет стоимости ремонта</p></div>
+</div>
+  <div class="square-container">
+  <div class="square"><img src="{% static 'images/2.png' %}"></div>
+  <div class="square-container-content"><p>Поиск строителей</p><br></div>
+</div>
+ <div class="square-container">
+  <div class="square"><img src="{% static 'images/3.png' %}"></div>
+  <div class="square-container-content"><p>Дизайн</p><br></div>
+</div>
+ <div class="square-container">
+  <div class="square"><img src="{% static 'images/4.png' %}"></div>
+  <div class="square-container-content"><p style="font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+
+line-height: 24px;
+text-align: center;
+
+color: #E91B1B;">Товары со скидкой</p><br></div>
+</div>
+</div>	
+</div>
+<div class="container-products">
+<h3 class="heading-store">Бестселлеры</h3>
+
+<div class="angle angle-left prev"><img src="{% static 'images/angle-left.png' %}"></div>
+
+<div class="row owl-carousel" id="carousel-1" style="width:80%;margin-right: 10%;margin-left:10%;">
+
+  {% for product in novinki %}
+                      <div class="store col-lg-3 col-6 item">
+                        <div class="single-product">
+                          <div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px" class="code">Код: 51265</p>
+  {% if product in wishedProductsList %}
+  <i class="bi bi-heart-fill addWishlist" style="color: red" data-product="{{product.id}}" data-action="add"></i>
+  {% else %}
+  <i class="bi bi-heart addWishlist"  data-product="{{product.id}}" data-action="add"></i>
+  {% endif %}
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+
+  </div>
+  <div class="product-image" style="padding:10%;">
+    <a href="{% url 'product_details' product.category.slug product.slug %}"><img style="width: 100%;height: 100%;" src="{{product.imageURL}}"></a>
+  </div>
+  <div class="middle-product">
+    <div class="middle-product-content">
+  <p class="available" style="color:#617375;">В наличии</p>
+  <p class="product-name" style="color:black;">{{product.name}}</p>
+  <p class="product-description">.....</p>
+  <p>.....</p>
+  </div>
+  <p class="price">Цена: {{product.price}}</p>
+</div>
+  <div class="counter">
+    <div class="arrow-up increase" id="arrow-up" data-product="{{product.id}}" data-action="plus" ><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" id="quantity" class="quantity" value="1" data-product="{{product.id}}"></div>
+    <div class="arrow-down increase" id="arrow-down" data-product="{{product.id}}" data-action="minus"><i class="fa fa-arrow-down"></i></div>
+</div>
+  <div class="product-foot"><div class="product-action-2">
+                                <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">В Корзину</button>
+                              </div></div>
+ 
+</div>
+                        </div>
+                      </div>
+                        {% endfor %}
+                      </div>
+                      <div class="angle angle-right next"><img src="{% static 'images/angle-right.png' %}"></div>
+                    </div>
+                      
+                      <br>
+                      <br>
+                      <br>
+                      <div class="squares-items" style="width:80%;margin-left: 13%;">
+  <div class="square1"><img src="{% static 'images/bar-1.PNG' %}"></div>
+  <div class="square1"><img src="{% static 'images/bar-2.PNG' %}"></div>
+  <div class="square1"><img src="{% static 'images/bar-3.PNG' %}"></div>
+  <div class="square1"><img src="{% static 'images/bar-4.PNG' %}"></div>
+</div>
+<br>
+<br>  
+<div class="container-products">
+<h3 class="heading-store">Новинки</h3>
+
+<div class="angle angle-left" id="prev"><img src="{% static 'images/angle-left.png' %}"></div>
+
+<div class="row owl-carousel" id="carousel-2" style="width:80%;margin-right: 10%;margin-left:10%;">
+
+  {% for product in popularnye %}
+                      <div class="store col-lg-3 col-6 item">
+                        <div class="single-product">
+                          <div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px" class="code">Код: 51265</p>
+  {% if product in wishedProductsList %}
+  <i class="bi bi-heart-fill addWishlist" style="color: red" data-product="{{product.id}}" data-action="add"></i>
+  {% else %}
+  <i class="bi bi-heart addWishlist"  data-product="{{product.id}}" data-action="add"></i>
+  {% endif %}
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+
+  </div>
+  <div class="product-image" style="padding:10%;">
+    <a href="{% url 'product_details' product.category.slug product.slug %}"><img style="width: 100%;height: 100%;" src="{{product.imageURL}}"></a>
+  </div>
+  <div class="middle-product">
+    <div class="middle-product-content">
+  <p class="available" style="color:#617375;">В наличии</p>
+  <p class="product-name" style="color:black;">{{product.name}}</p>
+  <p class="product-description">.....</p>
+  <p>.....</p>
+ </div>
+  <p class="price">Цена: {{product.price}}</p>
+</div>
+
+  <div class="counter">
+    <div class="arrow-up increase" id="arrow-up" data-product="{{product.id}}" data-action="plus" ><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" class="quantity" value="1" data-product="{{product.id}}"></div>
+    <div class="arrow-down increase" id="arrow-down" data-product="{{product.id}}" data-action="minus"><i class="fa fa-arrow-down"></i></div>
+</div>
+  <div class="product-foot"><div class="product-action-2">
+                                <button data-product="{{product.id}}" style="width:100%;height: 50px;" data-action="add" class="btn btn-outline-secondary add-btn update-cart">В Корзину</button>
+                              </div></div>
+ 
+</div>
+                        </div>
+                      </div>
+                        {% endfor %}
+                      </div>
+                      <div class="angle angle-right" id="next"><img src="{% static 'images/angle-right.png' %}"></div>
+                    </div>
+
+<!--<div class="row" style="width:90%;position: relative; left:5%;">
+											<div class="store col-lg-3 col-6">
+												<div class="single-product">
+													<div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px" class="code">Код: 51265</p>
+  <i class="bi bi-heart"></i>
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+  </div>
+  <div class="product-image">
+    <img src="{% static 'images/4.png' %}">
+  </div>
+  <p style="color:#617375;">В наличии</p>
+  <p style="color:black;">Унификс “Alinex”</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p class="price">Цена: 999</p>
+
+  <div class="counter">
+    <div class="arrow-up" id="arrow-up" onclick="increase()"><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" id="quantity" value="1"></div>
+    <div class="arrow-down" id="arrow-down" onclick="decrease()"><i class="fa fa-arrow-down"></i></div>
+  
+  </div>
+  <div class="product-foot"></div>
+ 
+</div>
+												</div>
+											</div>
+																			<div class="store col-lg-3 col-6">
+												<div class="single-product">
+													<div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px;" class="code">Код: 51265</p>
+  <i class="bi bi-heart"></i>
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+  </div>
+  <div class="product-image">
+    <img src="{% static 'images/5.png' %}">
+  </div>
+  <p style="color:#617375;">Нет в наличии</p>
+  <p style="color:black;">Жидкие гвозди  “Момент”</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p class="price">Цена: 12000</p>
+  <div class="counter">
+    <div class="arrow-up" id="arrow-up" onclick="increase()"><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" id="quantity" value="1"></div>
+    <div class="arrow-down" id="arrow-down" onclick="decrease()"><i class="fa fa-arrow-down"></i></div>
+  
+  </div>
+  <div class="product-foot"></div>
+ 
+</div>
+												</div>
+											</div>
+																					<div class="store col-lg-3 col-6">
+												<div class="single-product">
+													<div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px;" class="code">Код: 51265</p>
+  <i class="bi bi-heart"></i>
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+  </div>
+  <div class="product-image">
+    <img src="{% static 'images/6.png' %}">
+  </div>
+  <p style="color:#617375;">В наличии</p>
+  <p style="color:black;">Труба гофрированная ПВХ 20 мм</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p class="price">Цена: 12000</p>
+  <div class="counter">
+    <div class="arrow-up" id="arrow-up" onclick="increase()"><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" id="quantity" value="1"></div>
+    <div class="arrow-down" id="arrow-down" onclick="decrease()"><i class="fa fa-arrow-down"></i></div>
+  
+  </div>
+  <div class="product-foot"></div>
+ 
+</div>
+												</div>
+											</div>
+																					<div class="store col-lg-3 col-6" style="padding-right: 5px;">
+												<div class="single-product">
+													<div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px;" class="code">Код: 51265</p>
+  <i class="bi bi-heart"></i>
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+  </div>
+  <div class="product-image">
+    <img src="{% static 'images/7.png' %}">
+  </div>
+  <p style="color:#617375;">В наличии</p>
+  <p style="color:black;">Подрозетник Schneider Electric для бетона</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p class="price">Цена: 12000</p>
+  <div class="counter">
+    <div class="arrow-up" id="arrow-up" onclick="increase()"><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" id="quantity" value="1"></div>
+    <div class="arrow-down" id="arrow-down" onclick="decrease()"><i class="fa fa-arrow-down"></i></div>
+  
+  </div>
+  <div class="product-foot"></div>
+ 
+</div>
+												</div>
+											</div>
+											
+</div>
+<br>
+<br>
+<br>
+<br>
+<h3 class="heading-store" stlye="text-align:center;">Новинки</h3>
+<div class="row" style="width:90%;position: relative; left:5%;">
+												<div class="store col-lg-3 col-6">
+												<div class="single-product">
+													<div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px;" class="code">Код: 51265</p>
+  <i class="bi bi-heart"></i>
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+  </div>
+  <div class="product-image">
+    <img src="{% static 'images/8.png' %}">
+  </div>
+  <p style="color:#617375;">В наличии</p>
+  <p style="color:black;">Рулетка Hesler</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p class="price">Цена: 264</p>
+  <div class="counter">
+    <div class="arrow-up" id="arrow-up" onclick="increase()"><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" id="quantity" value="1"></div>
+    <div class="arrow-down" id="arrow-down" onclick="decrease()"><i class="fa fa-arrow-down"></i></div>
+  
+  </div>
+  <div class="product-foot"></div>
+ 
+</div>
+												</div>
+											</div>
+													<div class="store col-lg-3 col-6">
+												<div class="single-product">
+													<div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px;" class="code">Код: 51265</p>
+  <i class="bi bi-heart"></i>
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+  </div>
+  <div class="product-image">
+    <img src="{% static 'images/9.png' %}">
+  </div>
+  <p style="color:#617375;">Нет в наличии</p>
+  <p style="color:black;">Шнур малярный 30 м Hesler</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p class="price">Цена: 209</p>
+  <div class="counter">
+    <div class="arrow-up" id="arrow-up" onclick="increase()"><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" id="quantity" value="1"></div>
+    <div class="arrow-down" id="arrow-down" onclick="decrease()"><i class="fa fa-arrow-down"></i></div>
+  
+  </div>
+  <div class="product-foot"></div>
+ 
+</div>
+												</div>
+											</div>
+													<div class="store col-lg-3 col-6">
+												<div class="single-product">
+													<div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px;" class="code">Код: 51265</p>
+  <i class="bi bi-heart"></i>
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+  </div>
+  <div class="product-image">
+    <img src="{% static 'images/10.png' %}">
+  </div>
+  <p style="color:#617375;">В наличии</p>
+  <p style="color:black;">Глат “Alinex”</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p class="price">Цена: 570</p>
+  <div class="counter">
+    <div class="arrow-up" id="arrow-up" onclick="increase()"><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" id="quantity" value="1"></div>
+    <div class="arrow-down" id="arrow-down" onclick="decrease()"><i class="fa fa-arrow-down"></i></div>
+  
+  </div>
+  <div class="product-foot"></div>
+ 
+</div>
+												</div>
+											</div>
+													<div class="store col-lg-3 col-6">
+												<div class="single-product">
+													<div class="single-product">
+  <div class="header-single-product">
+  <p style="margin-top:-10px;margin-bottom:-10px;" class="code">Код: 51265</p>
+  <i class="bi bi-heart"></i>
+    <i class="fa fa-balance-scale" style="margin-right:5px;"></i>
+  </div>
+  <div class="product-image">
+    <img src="{% static 'images/11.png' %}">
+  </div>
+  <p style="color:#617375;">В наличии</p>
+  <p style="color:black;">Бур SDS-plus</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p>.....</p>
+  <p class="price">Цена: 103</p>
+  <div class="counter">
+    <div class="arrow-up" id="arrow-up" onclick="increase()"><i class="fa fa-arrow-up"></i></div>
+    <div class="quantity"><input type="number" id="quantity" value="1"></div>
+    <div class="arrow-down" id="arrow-down" onclick="decrease()"><i class="fa fa-arrow-down"></i></div>
+  
+  </div>
+  <div class="product-foot"></div>
+ 
+</div>
+												</div>
+											</div>-->
+											
+											<br>
+											<br>
+											<br>
+
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script>
+
+
+  $('#carousel-1').owlCarousel({
+    
+    margin:10,
+    responsive:{
+        0:{
+            items:1
+        },
+        300:{
+            items:2
+        },
+        600:{
+            items:3
+        },
+        900:{
+            items:4
+        }
+    }
+})
+  var owl1 = $('#carousel-1');
+owl1.owlCarousel();
+  $('.next').click(function() {
+    owl1.trigger('next.owl.carousel',[150]);
+})
+// Go to the previous item
+$('.prev').click(function() {
+    // With optional speed parameter
+    // Parameters has to be in square bracket '[]'
+    owl1.trigger('prev.owl.carousel',[150]);
+})
+
+$('#carousel-2').owlCarousel({
+
+    margin:10,
+    responsive:{
+        0:{
+            items:1
+        },
+        300:{
+            items:2
+        },
+        600:{
+            items:3
+        },
+        900:{
+            items:4
+        }
+    }
+})
+  var owl2 = $('#carousel-2');
+  owl2.owlCarousel();
+  $('#next').click(function() {
+    owl2.trigger('next.owl.carousel',[150]);
+})
+// Go to the previous item
+$('#prev').click(function() {
+    // With optional speed parameter
+    // Parameters has to be in square bracket '[]'
+    owl2.trigger('prev.owl.carousel',[150]);
+})
+
+</script>
+
+{% endblock content %}
